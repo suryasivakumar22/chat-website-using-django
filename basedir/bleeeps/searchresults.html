@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+		.left a:hover{
+			border-radius: 15px;
+		}
+		body,html{
+			  font-family: 'Gloria Hallelujah', cursive;
+    		  background:white;
+			  letter-spacing: 2px;
+			  min-height: 101vh;
+		}
+
+		.right h1{
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 50px;
+			font-weight: bolder;
+			margin-bottom: 90px;
+		}
+		.right{
+			margin-left: 35px;
+			font-family: 'Quantico', sans-serif;
+		}
+		.right h2{
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 40px;
+		}
+		p{
+			font-family: 'Quantico', sans-serif;
+			font-size: 28px;
+		}
+		.add{
+			border-radius: none;
+			background: white;
+			height: 30px;
+			width: 50px;
+			transform: scale(1.1);
+			border: 1px solid black;
+			margin-bottom: 10px;
+		}
+		.add:hover{
+			background: black;
+			color: white;
+		}
+		.addcon{
+			border-bottom: 3px solid black;
+		}
+	</style>
+</head>
+<body>
+<div class="mainframe">
+		<div class="left">
+			<div class="w3-sidebar w3-bar-block w3-black w3-xlarge" style="width:50px;margin-bottom: 100px;">
+			  <a href="#" class="w3-bar-item w3-button w3-hover-white">
+			  	<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+			  </a> 
+			  <a href="#" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-search"></i></a>  
+			</div>
+		</div>
+		<div class="w3-container right">
+   			 <h1 style="margin-left: 520px;color: black;">Add Bleeps</h1>
+   			 <div class="addcon">
+   			 	{% if name %}
+   			 	<form method="POST">{% csrf_token %}
+   			 		<div style="margin-left: 30%;">
+   			 		<div style="display: inline-block;"><h3>{{ name }}</h3></div>
+   			 		<div style="display: inline-block;margin-left: 40%;"><button class="add" type="submit" style="outline: none;" name="contact" value="{{ number }}">Add</button></div>
+   			 		</div>
+   			 		
+   			 	</form>
+   			 	{% else %}
+   			 	<div style="display: inline-block;margin-left: 40%;"><h1>notfound</h1></div>
+   			 	{% endif %}
+   			 </div>
+ 		</div>  
+</div>
+</body>
+</html>

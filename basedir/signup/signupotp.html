@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+		body,html{
+			background: #e5e5e5;
+			font-family: 'Gloria Hallelujah', cursive;
+		}
+		.loginbox{
+			background: white;
+			height: 250px;
+			width: 500px;
+			margin-top: 200px;
+			margin-left: 400px;
+		}
+		.otp2{
+			border: 1px solid #e5e5e5;
+			height: 35px;
+			margin-top: 30px;
+			width: 50%;
+			margin-left: 115px;
+			font-family: 'Quantico', sans-serif;
+			color: black;
+		}
+		.loginbutton{
+			font-family: 'Quantico', sans-serif;
+			background: white;
+			border: 1px solid black;
+			color: black;
+			margin-left: 10px;
+		}
+		.loginbutton:hover{
+			background: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="loginbox">
+		<div style="padding-left: 210px;">
+			<h1>OTP</h1>
+		</div>
+		<div>
+			<form method="POST" class="loginform" autocomplete="off">
+				<input type="text" class ="otp2" name="otp2" placeholder="Enter Your OTP" style="outline: none;" maxlength="4" minlength="4">{% csrf_token %}
+				<button class="loginbutton" style="outline: none;">
+					SIGNUP
+				</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

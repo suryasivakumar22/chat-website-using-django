@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+		.left a:hover{
+			border-radius: 15px;
+		}
+		body,html{
+		  font-family: 'Gloria Hallelujah', cursive;
+		  background:white ;
+		  min-height: 100vh;
+		}
+
+		.right h1{
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 50px;
+			font-weight: bolder;
+		}
+		.right{
+			margin-left: 100px;
+			font-family: 'Quantico', sans-serif;
+		}
+		.right h2{
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 40px;
+		}
+		p{
+			font-family: 'Quantico', sans-serif;
+			font-size: 28px;
+		}
+
+		::-webkit-scrollbar {
+		  width: 5px;
+		}
+
+		::-webkit-scrollbar-track {
+		  width: 5px;
+		  background: #f5f5f5;
+		}
+
+		::-webkit-scrollbar-thumb {
+		  width: 1em;
+		  background-color: #ddd;
+		  outline: 1px solid slategrey;
+		  border-radius: 1rem;
+		}
+		.text-small {
+		  font-size: 0.9rem;
+		}
+
+		.messages-box,
+		.chat-box {
+		  height: 510px;
+		  overflow-y: scroll;
+		}
+
+		.rounded-lg {
+		  border-radius: 0.5rem;
+		}
+
+		input::placeholder {
+		  font-size: 0.9rem;
+		  color: #999;
+		}
+		#button-addon2{
+			color: black;
+		}
+		.list-group-item:hover {
+			background: black;
+			
+		}
+		</style>
+</head>
+<body>
+	<div class="mainframe">
+		<div class="left">
+			<div class="w3-sidebar w3-bar-block w3-black w3-xlarge" style="width:50px;margin-bottom: 100px;">
+			  <a href="#" class="w3-bar-item w3-button w3-hover-white">
+			  	<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+
+			  </a> 
+			  <a href="messearch.html" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-search"></i></a>  
+			</div>
+		</div>
+		<div class="w3-container right">
+		<div class="container py-5 px-4">
+		  <div class="row rounded-lg overflow-hidden shadow">
+		    <!-- Users box-->
+		    <div class="col-5 px-0">
+		      <div class="bg-white">
+
+		        <div class="bg-gray px-4 py-2 bg-light">
+		          <p class="h5 mb-0 py-1">Recent</p>
+		        </div>
+
+		        <div class="messages-box">
+		          <div class="list-group rounded-0">
+		           <form method="POST">{% csrf_token %}
+		           	{% for i in names %}
+		            <button href="http://localhost:8000/m/bleeeps" class="list-group-item list-group-item-action list-group-item" name="given" value="{{ i }}" style="color:black;outline:none;">
+		              	<div class="media">
+		               		 <div class="media-body ml-4">
+		                  		<div class="d-flex align-items-center justify-content-between mb-1">
+		                    		<h6 class="mb-0">+91 {{ i }}</h6>
+		                    		<small class="small font-weight-bold">2 March</small>
+		                  		</div>
+		                	</div>
+		             	</div>
+		            </button>
+		            {% endfor %}
+		           </form>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- Chat Box-->
+		    <div class="col-7 px-0">
+		      <div class="px-4 py-5 chat-box ">
+		        <h1 style="margin-top:190px; "><center>Click A Bleeep
+		        	To Continue Bleeeping....</center>
+		        </h1>
+
+		    </div>
+		  </div>
+		</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

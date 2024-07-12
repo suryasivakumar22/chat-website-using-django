@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+		.left a:hover{
+			border-radius: 15px;
+		}
+		body,html{
+			font-family: 'Gloria Hallelujah', cursive;
+
+  background:white;
+  letter-spacing: 2px;
+  min-height: 101vh;
+		}
+
+		.right h1{
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 50px;
+			font-weight: bolder;
+		}
+		.right{
+			margin-left: 35px;
+			font-family: 'Quantico', sans-serif;
+		}
+		.right h2{
+			font-family: 'Gloria Hallelujah', cursive;
+			font-size: 40px;
+		}
+		p{
+			font-family: 'Quantico', sans-serif;
+			font-size: 28px;
+		}
+
+a:hover, a:active{
+  text-decoration: none;
+}
+
+input[type="text"], select{ 
+    outline: none;
+}
+
+.col-xs-1{
+  padding:0;
+}
+
+h1{
+  color:black;
+}
+
+
+.container{
+  max-width: 720px;
+  margin: auto;
+  padding: 0 50px;
+}
+
+ul{
+  padding: 0;
+}
+
+li{
+  letter-spacing: 0;
+  padding: 30px;
+  list-style: none;
+  min-height: 200px;
+  background: #fff;
+  margin: 50px auto;
+  text-align: left;
+  -webkit-transition: box-shadow .2s ease-out .2s;
+  -moz-transition: box-shadow .2s ease-out .2s;
+  -o-transition: box-shadow .2s ease-out .2s;
+  transition: box-shadow .2s ease-out .2s;
+  word-spacing: 2px;
+}
+
+li > h3{
+  margin-top:0;
+  color: #E35865;
+  line-height: 2;
+}
+
+li > p{
+  color: #666;
+  line-height: 2;
+}
+
+input{
+  padding:0;
+  border-radius: 0;
+  border: none;
+  font-size: 20px;
+  color: black;
+  background:none;
+  letter-spacing: 1px;
+  word-spacing: 10px;
+  font-family: 'Quantico', sans-serif;
+  padding: 0;
+  line-height: 25px;
+}
+
+#searchBox{
+  padding-top: 40vh;
+}
+
+button{
+  background: none;
+  border: none;
+}
+
+.form{
+  padding: 8px 0;
+  border: 3px solid black;
+  
+}
+
+.form.col-xs-12{
+  padding-left: 0;
+}
+
+.glyphicon{
+  color: black;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.glyphicon-search{
+  cursor: pointer;
+
+}
+
+.glyphicon-search:hover{
+
+}
+
+.bar{
+  vertical-align: super;
+  font-weight: 700;
+  font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+li:hover{
+  box-shadow: 0 0 15px 15px rgba(0,0,0,.1);
+}
+
+::-webkit-input-placeholder {
+  color: black;
+  opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: black;
+  opacity: 1;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: black;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {  
+  color: black;
+  opacity: 1;
+}
+
+
+/*********media query starts ***********/
+
+@media screen and (max-width: 420px){
+  #searchBar,.glyphicon{
+    font-size: 16px;
+  } 
+  
+  h1{
+    font-size: 28px;
+  } 
+}
+	</style>
+</head>
+<body>
+	<div class="mainframe">
+		<div class="left">
+			<div class="w3-sidebar w3-bar-block w3-black w3-xlarge" style="width:50px;margin-bottom: 100px;">
+			  <a href="#" class="w3-bar-item w3-button w3-hover-white">
+			  	<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+
+			  </a> 
+			  <a href="#" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-search"></i></a>  
+			</div>
+		</div>
+		<div class="w3-container right">
+  <div class="container text-center" id="searchBox" >
+    <h1>Search Bleeps </h1>
+    <div class="form col-xs-12" style="">   
+    	<form method="POST" autocomplete="off">{% csrf_token %}
+    		<input class="col-xs-9" id="searchBar" type="text" name="serachbar" placeholder="Search" >
+    		<button type="submit" style="outline: none;padding-bottom: 0;"><span class="glyphicon glyphicon-search col-xs-1" style="padding-left: 115px;"  ></span></button>
+        </form>
+        
+      </div>
+    </div>
+  </div>  
+</div>
+</body>
+</html>
